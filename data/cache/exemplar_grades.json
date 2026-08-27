@@ -1,0 +1,512 @@
+[
+  {
+    "name": "erdos_1002",
+    "axis_scores": [
+      {
+        "axis": "formal_setup",
+        "score": 2,
+        "evidence": "for its fractional part. Throughout, (\\log) denotes the natural logarithm. For every integer (n\\ge2) and every (\\alpha\\in(0,1)), define ... where (|\\cdot|) denotes Lebesgue measure",
+        "note": "Every symbol \u2014 fractional part convention, logarithm base, summation range, normalization, measure \u2014 is defined before use, so the statement is fully self-contained."
+      },
+      {
+        "axis": "target_claim",
+        "score": 2,
+        "evidence": "determine whether there exists a non-decreasing function [ g:\\mathbb R\\to[0,1] ] such that ... (\\lim_{n\\to\\infty}F_n(c)=g(c)) for every real number (c)",
+        "note": "Exactly one existence question is posed, with the convergence mode pinned down explicitly (pointwise at every c, not at continuity points)."
+      },
+      {
+        "axis": "success_criteria",
+        "score": 2,
+        "evidence": "A complete solution must prove exactly one of the following two statements. Affirmative resolution: ... Negative resolution: No non-decreasing function (g) satisfying the stated boundary conditions has the required pointwise convergence property.",
+        "note": "Both directions are written out formally, and the negative case is further decomposed into the two exhaustive failure mechanisms (non-convergence at some c, or loss of mass at \u00b1\u221e)."
+      },
+      {
+        "axis": "ruled_out_shortcuts",
+        "score": 2,
+        "evidence": "proving convergence only for almost every (c); ... replacing the normalization (1/\\log n) by another normalization; ... averaging (F_n(c)) over (n), whether by Ces\u00e0ro, logarithmic, or another summation method",
+        "note": "A long, itemized list of specific insufficient reductions, weaker statements, and altered models is given rather than a generic 'no partial results'."
+      },
+      {
+        "axis": "pitfall_warnings",
+        "score": 2,
+        "evidence": "unjustified interchange of limits in (n), (c), Fourier truncation, continued-fraction depth, or moment order; ... treating the sequence ({\\alpha k}) as independent uniform random variables; ... moment convergence without moment determinacy or tightness",
+        "note": "Concrete, named failure modes specific to this problem (false independence, illegal limit interchange, misapplied ergodic theorem for fixed rotation, rational \u03b1 edge cases) are enumerated."
+      },
+      {
+        "axis": "resource_bounds",
+        "score": 2,
+        "evidence": "Standard proved theorems from uniform distribution theory, discrepancy theory, continued fractions, metric Diophantine approximation, ergodic theory, dynamical systems, harmonic analysis, Fourier analysis, probabilistic number theory, transfer operators, renewal theory, or probability may be used, but they must be stated accurately and applied with all necessary hypotheses, normalizations, and uniformity.",
+        "note": "Permitted background areas are named together with explicit conditions of use (accurate statement, hypotheses, normalizations, uniformity)."
+      },
+      {
+        "axis": "reformulations",
+        "score": 1,
+        "evidence": "Fourier expansions of the sawtooth function, discrepancy sums, continued-fraction decompositions, Farey partitions, Gauss-map and transfer-operator methods",
+        "note": "These are named directions rather than stated reformulations with their limitations spelled out mathematically."
+      },
+      {
+        "axis": "no_answer_leak",
+        "score": 2,
+        "evidence": "do not assume in advance that the answer is affirmative or negative",
+        "note": "Both outcomes are given equal formal treatment and the prompt explicitly instructs that incompatible routes be kept alive until one is rigorously ruled out."
+      },
+      {
+        "axis": "verification_demand",
+        "score": 2,
+        "evidence": "Use adversarial agents throughout. Every candidate proof must be checked for: * convergence for every real (c), rather than only continuity points or almost every (c); * the exact normalization (1/\\log n);",
+        "note": "A concrete adversarial audit checklist of attack points is mandated before any answer may be returned."
+      },
+      {
+        "axis": "search_policy",
+        "score": 2,
+        "evidence": "Maintain an explicit registry of approach families. ... If many agents converge to one family, redirect some of them toward underexplored formulations. ... When an approach stalls at a theorem-strength missing lemma, mark that route as blocked.",
+        "note": "Diversity, independence preservation, blocking/reopening criteria, and reallocation rules are all specified explicitly."
+      },
+      {
+        "axis": "stop_condition",
+        "score": 2,
+        "evidence": "Return only when the existence of the asymptotic distribution function, in the exact pointwise sense stated above, has been completely resolved and the argument survives adversarial audit. Do not return a reduction, partial result, isolated missing lemma, subsequential limit, moment calculation, finite computation, numerical guess, \"best effort\" summary",
+        "note": "Both the return condition and an explicit list of non-answers to refuse are given."
+      },
+      {
+        "axis": "contamination_control",
+        "score": 2,
+        "evidence": "Public search may be used only for ordinary mathematical background or standard named theorems, not to search for a solution to this exact Erd\u0151s problem or benchmark.",
+        "note": "Draws a clear line between permitted background lookup and forbidden retrieval of the solution or open-status information."
+      }
+    ],
+    "top_gaps": [
+      "Supply actual scaffolding rather than a menu of technique names: e.g. write out the Fourier series of 1/2 \u2212 {t}, the resulting sum \u2211_{k\u2264n} \u2211_j sin(2\u03c0jk\u03b1)/(\u03c0j), or a continued-fraction/Ostrowski decomposition of the partial sums, and note precisely where each representation breaks down (convergence of the Fourier series at rational points, dependence on partial quotients).",
+      "Give an explicit resource/effort budget: the prompt simultaneously says 'do not stop... until you have found a complete and rigorous solution' and 'otherwise report only the strongest rigorously proved derivation and its exact remaining gap', which are contradictory; a round cap or wall-clock/agent-round bound would resolve which instruction governs.",
+      "State a canonical fallback deliverable format (proved lemmas plus the exact remaining gap) that is permitted once the budget is exhausted, so the never-stop clause does not force an unaudited or fabricated resolution."
+    ],
+    "total": 23,
+    "max_total": 24,
+    "pct": 95.83333333333333
+  },
+  {
+    "name": "erdos_1038",
+    "axis_scores": [
+      {
+        "axis": "formal_setup",
+        "score": 2,
+        "evidence": "A polynomial here is a real polynomial (f\\in\\mathbb R[x]). A polynomial is monic if its leading coefficient is (1). Roots are counted with multiplicity unless explicitly stated otherwise. For a measurable set (S\\subseteq\\mathbb R), write (|S|) for its Lebesgue measure.",
+        "note": "Every symbol (monic, multiplicity, Lebesgue measure, the class \\mathcal F with its factored form and root constraints) is defined before use, so the statement is self-contained."
+      },
+      {
+        "axis": "target_claim",
+        "score": 2,
+        "evidence": "Determine the infimum and supremum of\n[\n\\left|{x\\in\\mathbb R: |f(x)|<1}\\right|\n]\nas (f\\in\\mathcal F) ranges over all non-constant monic polynomials whose roots are all real and in ([-1,1]).",
+        "note": "A single formally stated extremal determination (the pair L, U for one explicitly quantified functional) with no scope ambiguity."
+      },
+      {
+        "axis": "success_criteria",
+        "score": 2,
+        "evidence": "prove the lower bound ... for every (f\\in\\mathcal F), prove the upper bound ... for every (f\\in\\mathcal F), and prove sharpness of both constants. Sharpness may be proved either by identifying extremizers or by constructing extremizing sequences, but non-attainment must be proved whenever the infimum or supremum is not attained.",
+        "note": "Completion is written out formally for both directions and for both the attained and non-attained cases."
+      },
+      {
+        "axis": "ruled_out_shortcuts",
+        "score": 2,
+        "evidence": "solving only fixed degree (d); ... proving upper and lower bounds that do not match exactly; ... reducing the problem to another unproved extremal principle of comparable strength.",
+        "note": "A long, specific enumeration of insufficient special cases, weaker statements, and circular reductions."
+      },
+      {
+        "axis": "pitfall_warnings",
+        "score": 2,
+        "evidence": "replacing the strict inequality (|f(x)|<1) by (|f(x)|\\le 1) without proving that this does not change the measure",
+        "note": "Concrete traps are named (strict vs. non-strict inequality, repeated roots, endpoint roots, components outside [-1,1], local vs. global optimality, circularity), not just generic caution."
+      },
+      {
+        "axis": "resource_bounds",
+        "score": 2,
+        "evidence": "Standard proved theorems from real-rooted polynomial theory, approximation theory, Chebyshev theory, Remez inequalities, Markov-type inequalities, logarithmic capacity, potential theory, real algebraic geometry, optimization, or real analysis may be used, but they must be stated accurately and applied with all needed hypotheses.",
+        "note": "Named permitted areas together with an explicit condition on their use (accurate statement, all hypotheses verified)."
+      },
+      {
+        "axis": "reformulations",
+        "score": 1,
+        "evidence": "root-parameter viewpoints, interval decompositions, real-rootedness constraints, interlacing arguments, critical-point analysis, Chebyshev and Remez viewpoints, capacity methods, variational arguments",
+        "note": "Approach families are listed as search directions, but no equivalent formulation, intermediate object, or explicit scaffolding construction is actually supplied."
+      },
+      {
+        "axis": "no_answer_leak",
+        "score": 1,
+        "evidence": "Assume for purposes of this task that a complete exact solution exists.",
+        "note": "The values of L and U are not leaked and symmetry/endpoint assumptions are forbidden, but the prompt presupposes solvability and forbids reporting the problem as open, so outcomes are not fully left open."
+      },
+      {
+        "axis": "verification_demand",
+        "score": 2,
+        "evidence": "every candidate proof must be checked for exact determination of both infimum and supremum, all degrees rather than fixed degree, repeated roots, endpoint roots, non-attainment, strict versus non-strict inequality, components of ({|f|<1}) outside ([-1,1]), monic normalization, circular use of an equivalent extremal principle",
+        "note": "An adversarial audit with an itemized attack checklist is mandated before any return."
+      },
+      {
+        "axis": "search_policy",
+        "score": 2,
+        "evidence": "Maintain an explicit registry of approach families. Group agents by the mathematical idea they are using, not by superficial wording. If many agents converge to one family, redirect some of them toward underexplored formulations.",
+        "note": "Explicit portfolio discipline: diversity, enforced independence, blocking/reopening criteria, and reallocation rules."
+      },
+      {
+        "axis": "stop_condition",
+        "score": 2,
+        "evidence": "Return only when the exact infimum and exact supremum have both been found and a complete proof survives adversarial audit. Do not return a reduction, partial result, isolated missing lemma, numerical guess, \"best effort\" summary, or explanation of why the problem is difficult.",
+        "note": "States both the return trigger and a specific list of non-answers to refuse."
+      },
+      {
+        "axis": "contamination_control",
+        "score": 2,
+        "evidence": "Public search may be used only for ordinary mathematical background or standard named theorems, not to search for a solution to this exact Erd\u0151s problem or benchmark.",
+        "note": "Draws an explicit line between permitted background lookup and forbidden solution retrieval."
+      }
+    ],
+    "top_gaps": [
+      "Supply actual scaffolding rather than a list of buzzwords: e.g. an explicit reformulation of |{|f|<1}| in terms of root parameters or level-set components, a degree-1/2 worked computation as a sanity anchor, and a note on where each reformulation loses information.",
+      "Resolve the internal contradiction between 'report only the strongest rigorously proved derivation and its exact remaining gap' and 'Do not return a reduction, partial result ... or explanation of why the problem is difficult' so the stop condition is unambiguous.",
+      "Drop or soften 'Assume ... a complete exact solution exists' and the ban on reporting openness, and instead explicitly permit either resolution (including the possibility that inf/sup is only characterized as a limit) so no outcome is presupposed."
+    ],
+    "total": 22,
+    "max_total": 24,
+    "pct": 91.66666666666667
+  },
+  {
+    "name": "erdos_390",
+    "axis_scores": [
+      {
+        "axis": "formal_setup",
+        "score": 2,
+        "evidence": "For each integer (n\\ge3), let (f(n)) be the smallest integer (m) for which there exist an integer (k\\ge1) and distinct integers\n[\nn<a_1<a_2<\\cdots<a_k=m\n]",
+        "note": "Every object (f, k, a_i, R(n), log, v_p) is defined explicitly and well-definedness is argued, making the setup self-contained."
+      },
+      {
+        "axis": "target_claim",
+        "score": 2,
+        "evidence": "Is there a constant (c), and if so what is its exact value, such that\n[\nf(n)-2n\\sim c\\frac{n}{\\log n}\n]",
+        "note": "A single unambiguous question with an equivalent restatement in terms of R(n)."
+      },
+      {
+        "axis": "success_criteria",
+        "score": 2,
+        "evidence": "A complete solution must prove exactly one of the following two statements.\n\nAffirmative resolution:",
+        "note": "Both affirmative and negative resolutions are formally spelled out, including what a negative proof must establish."
+      },
+      {
+        "axis": "ruled_out_shortcuts",
+        "score": 2,
+        "evidence": "* proving convergence of (R(n)) only along a selected subsequence of (n);",
+        "note": "A long, specific enumeration of insufficient partial results and modified problems."
+      },
+      {
+        "axis": "pitfall_warnings",
+        "score": 2,
+        "evidence": "* mishandling the floor terms in Legendre\u2019s formula for (v_p(n!));\n  * replacing an integer optimization problem by a continuous relaxation without controlling the integrality gap;",
+        "note": "Names concrete, problem-specific failure modes rather than generic cautions."
+      },
+      {
+        "axis": "resource_bounds",
+        "score": 2,
+        "evidence": "Standard proved theorems from analytic number theory, ... may be used, but they must be stated accurately and applied with all necessary hypotheses and uniformity.",
+        "note": "Names permitted areas plus conditions of use, and explicitly bars conditional results on unproved conjectures."
+      },
+      {
+        "axis": "reformulations",
+        "score": 2,
+        "evidence": "Any reformulation in terms of prime valuations, divisor packing, exact covers, matchings, flows, or integer programming must preserve all of the following:",
+        "note": "Supplies multiple alternative formulations plus the invariants any reformulation must respect, i.e., their limits."
+      },
+      {
+        "axis": "no_answer_leak",
+        "score": 2,
+        "evidence": "Assume for purposes of this task that a complete resolution exists, but do not assume in advance that the answer is affirmative or negative.",
+        "note": "Explicitly keeps both outcomes open and forbids presupposing either."
+      },
+      {
+        "axis": "verification_demand",
+        "score": 2,
+        "evidence": "Use adversarial agents throughout. Every candidate proof must be checked for:",
+        "note": "Specifies an adversarial audit with a concrete itemized checklist of attacks."
+      },
+      {
+        "axis": "search_policy",
+        "score": 2,
+        "evidence": "Maintain an explicit registry of approach families. ... When an approach stalls at a theorem-strength missing lemma, mark that route as blocked.",
+        "note": "Explicit portfolio management with diversity, independence, blocking and reopening criteria."
+      },
+      {
+        "axis": "stop_condition",
+        "score": 2,
+        "evidence": "Return only when the existence and exact value of the requested constant have been completely resolved ... Do not return an order-of-magnitude estimate, reduction, partial result, isolated missing lemma, finite computation, numerical guess, \u201cbest effort\u201d summary",
+        "note": "Gives both the return condition and a named list of non-answers to refuse."
+      },
+      {
+        "axis": "contamination_control",
+        "score": 2,
+        "evidence": "Public search may be used only for ordinary mathematical background or standard named theorems, not to search for a solution to this exact Erd\u0151s problem or benchmark.",
+        "note": "Draws an explicit boundary between allowed background lookup and forbidden answer lookup."
+      }
+    ],
+    "top_gaps": [
+      "The instruction to never stop or return without a complete proof conflicts with any practical compute budget; a bounded round/effort limit with a defined fallback report format would make the stop condition actionable.",
+      "Success criteria for the negative branch mention determining liminf/limsup 'as far as the proof permits', which is vaguer than the rest; specifying what quantitative nonconvergence statement suffices would tighten it.",
+      "No guidance on how partial-but-verified lemmas should be recorded or handed off between rounds, so useful intermediate output may be discarded under the all-or-nothing return rule."
+    ],
+    "total": 24,
+    "max_total": 24,
+    "pct": 100.0
+  },
+  {
+    "name": "erdos_486",
+    "axis_scores": [
+      {
+        "axis": "formal_setup",
+        "score": 2,
+        "evidence": "Let (\\mathbb N={1,2,3,\\ldots}). For each (n\\in\\mathbb N), write (\\mathbb Z/n\\mathbb Z) for the residue classes modulo (n).",
+        "note": "Every symbol (N, Z/nZ, membership mod n, A, X_n, B, the logarithmic density limit) is defined before use, self-contained."
+      },
+      {
+        "axis": "target_claim",
+        "score": 2,
+        "evidence": "Must (B) always possess a logarithmic density? In other words, must the limit ... exist for every choice of (A) and every family ((X_n)_{n\\in A})?",
+        "note": "A single unambiguous existence question with quantifiers made explicit."
+      },
+      {
+        "axis": "success_criteria",
+        "score": 2,
+        "evidence": "A complete solution must prove exactly one of the following two statements.\n\nAffirmative resolution: ... Negative resolution:",
+        "note": "Both directions written out formally, with additional requirements on the counterexample."
+      },
+      {
+        "axis": "ruled_out_shortcuts",
+        "score": 2,
+        "evidence": "* proving the result only when (A) is finite;\n* proving the result only when the moduli in (A) are pairwise coprime, nested by divisibility, lacunary",
+        "note": "A long, specific enumeration of insufficient partial results and reductions."
+      },
+      {
+        "axis": "pitfall_warnings",
+        "score": 2,
+        "evidence": "unjustified interchange of the limits (x\\to\\infty) and (y\\to\\infty);\n  * assuming that density is continuous under decreasing intersections;",
+        "note": "Names concrete traps including edge cases n=1, X_n empty or full, false independence, and treating infinite unions as periodic."
+      },
+      {
+        "axis": "resource_bounds",
+        "score": 2,
+        "evidence": "Standard proved theorems from analytic number theory, probabilistic number theory, ergodic theory ... may be used, but they must be stated accurately and applied with all necessary hypotheses and uniformity.",
+        "note": "Names permitted areas and imposes conditions (accurate statement, hypotheses, uniformity)."
+      },
+      {
+        "axis": "reformulations",
+        "score": 2,
+        "evidence": "The problem may be reformulated by defining ... Then (B=\\mathbb N\\setminus\\bigcup_{n\\in A}C_n). ... However, the existence of the densities of all finite truncations does not by itself prove that (B) has logarithmic density.",
+        "note": "Gives two explicit reformulations (complement of union; truncations B_y) with their limitations stated."
+      },
+      {
+        "axis": "no_answer_leak",
+        "score": 2,
+        "evidence": "Assume for purposes of this task that a complete resolution exists, but do not assume in advance that the answer is affirmative or negative.",
+        "note": "Explicitly forbids presupposing either outcome and requires both routes kept alive."
+      },
+      {
+        "axis": "verification_demand",
+        "score": 2,
+        "evidence": "Use adversarial agents throughout. Every candidate proof must be checked for: ... circular use of a convergence principle equivalent to the desired conclusion.",
+        "note": "Specifies an adversarial audit with a concrete itemized checklist."
+      },
+      {
+        "axis": "search_policy",
+        "score": 2,
+        "evidence": "Maintain an explicit registry of approach families. ... Keep several incompatible proof routes alive through multiple rounds. ... mark that route as blocked. Only continue assigning agents to it if someone proposes a materially new mechanism",
+        "note": "Detailed portfolio management: diversity, independence, blocking, reopening, reallocation."
+      },
+      {
+        "axis": "stop_condition",
+        "score": 2,
+        "evidence": "Return only when the existence question for logarithmic density has been completely resolved and the argument survives adversarial audit. Do not return a reduction, partial result, isolated missing lemma, finite computation, numerical guess, \u201cbest effort\u201d summary",
+        "note": "Explicit return condition plus a named list of non-answers to refuse."
+      },
+      {
+        "axis": "contamination_control",
+        "score": 2,
+        "evidence": "Public search may be used only for ordinary mathematical background or standard named theorems, not to search for a solution to this exact Erd\u0151s problem or benchmark.",
+        "note": "Draws an explicit line between allowed background lookup and forbidden solution lookup."
+      }
+    ],
+    "top_gaps": [
+      "Minor internal tension: the prompt both mandates 'Do not return a ... best effort summary' and instructs 'otherwise report only the strongest rigorously proved derivation and its exact remaining gap' \u2014 the stop condition should be made consistent.",
+      "Instructing the solver to 'Assume ... that a complete resolution exists' and 'do not answer that it is open' could push toward fabricating a proof; a clause on how to fail honestly without asserting a false resolution would help.",
+      "The affirmative branch does not specify whether \u03b4 must be computed/characterized or merely shown to exist, and whether \u03b4 may be 0; clarifying would remove residual scope ambiguity."
+    ],
+    "total": 24,
+    "max_total": 24,
+    "pct": 100.0
+  },
+  {
+    "name": "erdos_536",
+    "axis_scores": [
+      {
+        "axis": "formal_setup",
+        "score": 2,
+        "evidence": "let (f(N)) be the largest size of a set\n[\nA\\subseteq {1,2,\\ldots,N}\n]\nsuch that there do not exist three distinct elements (a,b,c\\in A) satisfying\n[\n[a,b]=[b,c]=[a,c].\n]",
+        "note": "lcm notation, the ambient interval, the extremal function, and the distinctness quantifier are all defined in-prompt, so no outside context is needed."
+      },
+      {
+        "axis": "target_claim",
+        "score": 2,
+        "evidence": "determine whether\n[\nf(N)=o(N).\n]",
+        "note": "One unambiguous binary question is designated the non-negotiable target, with secondary quantitative aims explicitly subordinated."
+      },
+      {
+        "axis": "success_criteria",
+        "score": 2,
+        "evidence": "A complete resolution must prove exactly one of the following two statements.\n\nAffirmative resolution: ... Negative resolution:",
+        "note": "Both outcomes are written out with full quantifiers, plus sufficiency clauses ('Any unconditional quantitative upper bound ... is sufficient')."
+      },
+      {
+        "axis": "ruled_out_shortcuts",
+        "score": 2,
+        "evidence": "proving the result only for squarefree integers, smooth integers, rough integers, divisors of a fixed integer, or integers with a bounded number of prime factors;",
+        "note": "A long, specifically enumerated list of insufficient special cases, weakenings, and circular reductions is given, not a generic 'no partial results'."
+      },
+      {
+        "axis": "pitfall_warnings",
+        "score": 2,
+        "evidence": "confusing positive density with density tending slowly to zero; ... applying a container, supersaturation, removal, or entropy theorem without verifying its hypotheses quantitatively; ... unproved independence assumptions concerning divisibility by different primes",
+        "note": "Concrete, named failure modes (loss of uniformity in N, circular hypergraph-density use, elements exceeding N) rather than general cautions."
+      },
+      {
+        "axis": "resource_bounds",
+        "score": 2,
+        "evidence": "Standard proved theorems from multiplicative number theory, extremal combinatorics, hypergraph theory, additive combinatorics, sieve theory, probabilistic combinatorics, entropy methods, order theory, or optimization may be used, but they must be stated accurately and applied with all necessary hypotheses and uniformity.",
+        "note": "Permitted areas are enumerated together with explicit conditions on their use (accurate statement, hypotheses, uniformity), and conjectural inputs are banned."
+      },
+      {
+        "axis": "reformulations",
+        "score": 2,
+        "evidence": "if and only if, for every prime (p), the maximum of\n[\n\\alpha_p,\\beta_p,\\gamma_p\n]\nis attained at least twice. ... This reformulation must be proved carefully before use.",
+        "note": "Supplies an explicit equivalent framing (prime-exponent vectors, no coordinate with unique strict maximum) plus the caveat that it must be proved and not used to smuggle in squarefree assumptions."
+      },
+      {
+        "axis": "no_answer_leak",
+        "score": 2,
+        "evidence": "do not assume in advance that the answer is affirmative or negative",
+        "note": "Both directions are given equal formal weight and the search policy demands keeping affirmative and negative routes alive, so no outcome is presupposed."
+      },
+      {
+        "axis": "verification_demand",
+        "score": 2,
+        "evidence": "Use adversarial agents throughout. Every candidate proof must be checked for:",
+        "note": "A concrete audit checklist of ~15 specific attack points is required before any claim may be returned."
+      },
+      {
+        "axis": "search_policy",
+        "score": 2,
+        "evidence": "Maintain an explicit registry of approach families. Group agents by the mathematical idea they are using, not by superficial wording. If many agents converge to one family, redirect some of them toward underexplored formulations.",
+        "note": "Explicit diversity, independence-preservation, blocked-route marking, and reopening criteria constitute genuine portfolio management."
+      },
+      {
+        "axis": "stop_condition",
+        "score": 2,
+        "evidence": "Return only when the (o(N)) question has been completely resolved and the argument survives adversarial audit. Do not return a reduction, partial result, isolated missing lemma, finite computation, numerical guess, \"best effort\" summary, or explanation of why the problem is difficult.",
+        "note": "States both the return condition and an enumerated list of non-answers to refuse."
+      },
+      {
+        "axis": "contamination_control",
+        "score": 2,
+        "evidence": "Public search may be used only for ordinary mathematical background or standard named theorems, not to search for a solution to this exact Erd\u0151s problem or benchmark.",
+        "note": "Draws an explicit line between permitted background lookup and forbidden answer retrieval, including the meta-question of openness."
+      }
+    ],
+    "top_gaps": [
+      "No resource or effort budget: 'Do not stop, return, or give up until you have found a complete and rigorous solution' combined with a ban on reporting partial results leaves no legitimate terminal state if the problem resists, which invites fabricated proofs; a round/compute cap with a defined fallback report would fix this.",
+      "The instruction to 'Assume for purposes of this task that a complete resolution of the principal question exists' conflicts with the demand for rigor and with the ban on answering that the problem is open; the prompt should say how to behave if no resolution is reachable.",
+      "Success criteria for the secondary aims (strongest quantitative bounds, 'correct asymptotic order') are not operationalized \u2014 no threshold is given for what counts as strongest, so an auditor cannot judge that part of the deliverable."
+    ],
+    "total": 24,
+    "max_total": 24,
+    "pct": 100.0
+  },
+  {
+    "name": "erdos_788",
+    "axis_scores": [
+      {
+        "axis": "formal_setup",
+        "score": 2,
+        "evidence": "For an integer (n\\ge2), define\n[\nU_n=(n,2n)\\cap\\mathbb N\n={n+1,n+2,\\ldots,2n-1}\n]",
+        "note": "Every object (U_n, V_n, B-avoiding, alpha_n(B), f(n), G_B) is defined explicitly with quantifiers, including the o(1) meaning."
+      },
+      {
+        "axis": "target_claim",
+        "score": 2,
+        "evidence": "determine whether\n[\nf(n)\\le n^{1/2+o(1)}\n\\qquad\\text{as }n\\to\\infty.\n]",
+        "note": "One unambiguous target, with the epsilon-n_0 unpacking making scope exact."
+      },
+      {
+        "axis": "success_criteria",
+        "score": 2,
+        "evidence": "A complete resolution must prove exactly one of the following two statements.\n\nAffirmative resolution: ... Negative resolution:",
+        "note": "Both directions are written out formally with correct quantifier order."
+      },
+      {
+        "axis": "ruled_out_shortcuts",
+        "score": 2,
+        "evidence": "* proving only a bound of the form\n  [\n  f(n)\\le n^{1/2+\\delta}\n  ]\n  for one fixed (\\delta>0);",
+        "note": "A long, specific enumeration of insufficient partial results and illegitimate reductions."
+      },
+      {
+        "axis": "pitfall_warnings",
+        "score": 2,
+        "evidence": "treating (G_B) as an arbitrary Erd\u0151s-R\u00e9nyi random graph and ignoring its sum-matching dependencies",
+        "note": "Names concrete traps: edge dependencies, loop/diagonal condition, subsequence-only bounds, hidden log factors, circular conjecture use."
+      },
+      {
+        "axis": "resource_bounds",
+        "score": 2,
+        "evidence": "Standard proved theorems from additive combinatorics, random graph theory, ... may be used, but they must be stated accurately and applied with all necessary hypotheses, dependencies, and uniformity.",
+        "note": "Named permitted areas plus explicit conditions on hypotheses and uniformity, and a ban on unproved conjectures."
+      },
+      {
+        "axis": "reformulations",
+        "score": 2,
+        "evidence": "The problem has the following exact graph formulation. Given (B\\subseteq V_n), define a simple graph (G_B) with vertex set (U_n)",
+        "note": "Supplies an exact equivalent reformulation plus the sum-matching structure and explicit limits on how far the reformulation may be pushed."
+      },
+      {
+        "axis": "no_answer_leak",
+        "score": 2,
+        "evidence": "Do not assume in advance that the conjectured upper bound is true or false.",
+        "note": "Both resolutions are given symmetric treatment and both routes must be kept alive."
+      },
+      {
+        "axis": "verification_demand",
+        "score": 2,
+        "evidence": "Use adversarial agents throughout. Every candidate proof must be checked for:",
+        "note": "A concrete adversarial checklist of fourteen specific attack points is required before returning."
+      },
+      {
+        "axis": "search_policy",
+        "score": 2,
+        "evidence": "Maintain an explicit registry of approach families. ... If many agents converge to one family, redirect some of them toward underexplored formulations.",
+        "note": "Explicit portfolio management: diversity, independence, blocking, reopening conditions, cross-pollination timing."
+      },
+      {
+        "axis": "stop_condition",
+        "score": 2,
+        "evidence": "Do not return a reduction, partial result, isolated missing lemma, finite computation, heuristic random-graph calculation, numerical guess, \u201cbest effort\u201d summary, or explanation of why the problem is difficult.",
+        "note": "Explicit return condition plus a named list of non-answers to refuse."
+      },
+      {
+        "axis": "contamination_control",
+        "score": 2,
+        "evidence": "Do not search the public web merely to determine whether this problem is open, and do not answer that it is open.",
+        "note": "Reinforces the boundary; scored 2 rather than 1 because the permitted/forbidden distinction is explicit."
+      }
+    ],
+    "top_gaps": [
+      "The instruction 'Assume for purposes of this task that a complete resolution ... exists' combined with 'Do not stop ... until you have found a complete and rigorous solution' risks forcing a fabricated proof; a sanctioned escape hatch (report strongest rigorous result plus exact gap) is mentioned once but then contradicted.",
+      "No resource bounds in the computational sense (time, agent rounds, size of n for exhaustive search over all B \u2286 V_n, which is exponential) are given, so computational agents lack feasibility guidance.",
+      "The demand for 'strongest rigorously justified upper and lower bounds' as a secondary goal is not given its own success criterion, leaving ambiguity about what suffices there."
+    ],
+    "total": 24,
+    "max_total": 24,
+    "pct": 100.0
+  }
+]

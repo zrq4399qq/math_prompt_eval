@@ -1,0 +1,399 @@
+{
+  "before": {
+    "name": "prompt",
+    "axis_scores": [
+      {
+        "axis": "formal_setup",
+        "score": 0,
+        "evidence": "",
+        "note": "No object is defined: \"SL over C\" has no rank, the \"lattice between root lattice and weight lattice\" relation is unspecified, and symbols like \"alpha1 omega23\" are never introduced or explained."
+      },
+      {
+        "axis": "target_claim",
+        "score": 1,
+        "evidence": "Q3: In type A for each fixed index sitting between it is uniquely determined?",
+        "note": "There are five interleaved questions rather than one target, and the phrasing (\"index sitting between\", \"can you show me\") leaves scope and the exact claim ambiguous."
+      },
+      {
+        "axis": "success_criteria",
+        "score": 0,
+        "evidence": "",
+        "note": "Nothing states what a complete answer would consist of (proof, classification table, counterexample) for any of the questions."
+      },
+      {
+        "axis": "ruled_out_shortcuts",
+        "score": 0,
+        "evidence": "",
+        "note": "No partial results, special cases, or weaker statements are excluded."
+      },
+      {
+        "axis": "pitfall_warnings",
+        "score": 0,
+        "evidence": "",
+        "note": "No failure modes or traps are named."
+      },
+      {
+        "axis": "resource_bounds",
+        "score": 0,
+        "evidence": "",
+        "note": "Silent on which theorems, textbooks, or computational tools may be used."
+      },
+      {
+        "axis": "reformulations",
+        "score": 0,
+        "evidence": "",
+        "note": "No equivalent framing or intermediate object is offered; the mention of \"alpha1 omega23\" is a query, not scaffolding with stated limits."
+      },
+      {
+        "axis": "no_answer_leak",
+        "score": 0,
+        "evidence": "But why this is unique, for example, why alpha1 omega23 doesn\u2019t work",
+        "note": "The prompt asserts the uniqueness conclusion and that the alternative fails, presupposing the answer instead of leaving it open."
+      },
+      {
+        "axis": "verification_demand",
+        "score": 0,
+        "evidence": "",
+        "note": "No audit, cross-check, or adversarial review of the answer is requested."
+      },
+      {
+        "axis": "search_policy",
+        "score": 0,
+        "evidence": "",
+        "note": "No guidance on exploration breadth, alternative approaches, or when to abandon a line."
+      },
+      {
+        "axis": "stop_condition",
+        "score": 0,
+        "evidence": "",
+        "note": "Nothing about when to return an answer or what must not be returned."
+      },
+      {
+        "axis": "contamination_control",
+        "score": 0,
+        "evidence": "",
+        "note": "No boundary drawn between permissible background lookup and simply retrieving the answer."
+      }
+    ],
+    "top_gaps": [
+      "Define every object and symbol explicitly \u2014 the rank and field of SL_n, the root/weight lattices and the intermediate-lattice correspondence with covering groups, and the meaning of the notation \"alpha1 omega23\" \u2014 so the question is parsable without outside context.",
+      "Reduce to a single formal target statement (e.g. \"for each divisor d of n, prove that the intermediate lattice between Q and P of index d in type A_{n-1} is unique\") and state what counts as a complete answer in both the affirmative and negative cases.",
+      "Remove the presupposition of uniqueness and add procedural requirements: an explicit verification step (e.g. enumerate all sublattices of P/Q for A_3 and check), permitted background results, and a stop condition naming non-answers (plausibility arguments, single worked example) that must not be returned."
+    ],
+    "total": 1,
+    "max_total": 24,
+    "pct": 4.166666666666667
+  },
+  "after": {
+    "name": "revised",
+    "axis_scores": [
+      {
+        "axis": "formal_setup",
+        "score": 2,
+        "evidence": "Fix once and for all: simple roots alpha_1, ..., alpha_{n-1} numbered along the A_{n-1} Dynkin diagram ... fundamental weights omega_1, ..., omega_{n-1} defined by <omega_j, alpha_i^vee> = delta_{ij}; root lattice Q = Z alpha_1 + ... ; weight lattice P = Z omega_1 + ...",
+        "note": "Every symbol (Q, P, A, index, 'A_3', intermediate lattice) is defined with conventions pinned, including transpose ambiguity."
+      },
+      {
+        "axis": "target_claim",
+        "score": 2,
+        "evidence": "T: For every integer n >= 2 and every positive integer d dividing |P/Q| ... the set { L : Q contained in L contained in P, [L : Q] = d } has exactly one element.",
+        "note": "A single formal claim is designated PRIMARY TARGET T with the other items explicitly labelled supporting deliverables."
+      },
+      {
+        "axis": "success_criteria",
+        "score": 2,
+        "evidence": "(c) Q3 = T, affirmative resolution: a proof valid for every n >= 2 ... (d) Q3 = T, negative resolution: explicit n, d, and two distinct lattices L_1, L_2 given by generators in the omega-basis",
+        "note": "Both directions of the target, plus criteria for each supporting item, are written out formally."
+      },
+      {
+        "axis": "ruled_out_shortcuts",
+        "score": 2,
+        "evidence": "(2) Settling T only for prime d, only for prime n, or only for d = 1 and d = |P/Q| ... (7) A resolution of T that only counts subgroups of P/Q abstractly without producing generators of each L in the omega-basis",
+        "note": "A specific enumerated list of insufficient partial results is given."
+      },
+      {
+        "axis": "pitfall_warnings",
+        "score": 2,
+        "evidence": "(i) Index confusion: silently swapping [L : Q] and [P : L] ... (iii) Assuming without proof that every intermediate lattice has the form Q + Z v for a single v in P",
+        "note": "Seven concretely named traps including degenerate cases and convention drift."
+      },
+      {
+        "axis": "resource_bounds",
+        "score": 2,
+        "evidence": "Conditions: any cited theorem linking covering groups to lattices must be quoted with its hypotheses (semisimple, simply connected, base field C) and checked against G = SL_n(C) before use",
+        "note": "Named sources and tools plus explicit conditions on their use, including reproduction of machine output by hand."
+      },
+      {
+        "axis": "reformulations",
+        "score": 2,
+        "evidence": "(R1) Quotient reformulation: intermediate lattices L with Q in L in P should correspond to subgroups of the finite abelian group P/Q via L |-> L/Q ... Limit: this converts T into a statement about subgroups of P/Q",
+        "note": "Three explicit reformulations each with stated limits."
+      },
+      {
+        "axis": "no_answer_leak",
+        "score": 2,
+        "evidence": "It is NOT given that this candidate 'doesn't work' and it is NOT given that uniqueness holds ... Do not phrase any part of the answer as an explanation of a conclusion assumed in advance.",
+        "note": "Both resolutions are kept live and assuming one is explicitly forbidden."
+      },
+      {
+        "axis": "verification_demand",
+        "score": 2,
+        "evidence": "(V4) Try actively to break T: for n = 4 and for at least one n with |P/Q| composite and not a prime power, search for a second intermediate lattice of an index already realised",
+        "note": "A six-item adversarial checklist with independent-route cross-checks is mandated before returning."
+      },
+      {
+        "axis": "search_policy",
+        "score": 2,
+        "evidence": "Pursue at least three lines in parallel and keep them logically independent ... Abandon a line if, after a bounded effort ... Reopen an abandoned line if (L-a) and (L-b) disagree",
+        "note": "Explicit portfolio with diversity, independence guard against disguised duplication, abandonment and reopening rules."
+      },
+      {
+        "axis": "stop_condition",
+        "score": 2,
+        "evidence": "Return only when: T (Q3) is resolved in one direction ... Refuse to return: a claim about the structure of P/Q for type A_{n-1} that is only asserted or only cited",
+        "note": "Return condition plus an explicit list of named non-answers to refuse."
+      },
+      {
+        "axis": "contamination_control",
+        "score": 2,
+        "evidence": "Allowed to look up: the definition and standard numbering of the A_{n-1} Cartan matrix ... Not allowed as the answer: retrieving a ready-made classification of the lattices between Q and P in type A",
+        "note": "A sharp boundary between permitted background lookup and forbidden answer retrieval, with instructions for encountered sources."
+      }
+    ],
+    "top_gaps": [
+      "Q2 is stated only as the fragment 'What is the relation with determinant of cartan matrix', so its target is vague relative to the rest; it should be stated as a precise identity to prove or refute.",
+      "Q4's phrasing ('How about A3, can you show me') is likewise informal and only rescued by item (e) of the completion criteria; folding the formal statement into the question itself would remove the mismatch.",
+      "'Bounded effort' for abandoning a line is not operationalised (no time, step, or attempt budget), so reallocation triggers remain subjective."
+    ],
+    "total": 24,
+    "max_total": 24,
+    "pct": 100.0
+  },
+  "edits": [
+    {
+      "id": "e1",
+      "axis": "formal_setup",
+      "target_score": 2,
+      "kind": "replace",
+      "anchor": "Q1: What is the relation between covering group of SL over C and lattice between root lattice and weight lattice",
+      "text": "Setup and notation (fixed for all of Q1-Q5). Let n >= 2 be an integer, let G = SL_n(C) (complex points, simply connected semisimple), with Lie algebra sl_n(C) of root system type A_{n-1}. Fix once and for all: simple roots alpha_1, ..., alpha_{n-1} numbered along the A_{n-1} Dynkin diagram so that alpha_i and alpha_{i+1} are adjacent; coroots alpha_i^vee; fundamental weights omega_1, ..., omega_{n-1} defined by <omega_j, alpha_i^vee> = delta_{ij}; root lattice Q = Z alpha_1 + ... + Z alpha_{n-1}; weight lattice P = Z omega_1 + ... + Z omega_{n-1}; Cartan matrix A = (a_{ij}) with the convention a_{ij} = <alpha_j, alpha_i^vee> (if you use the transpose convention, say so explicitly and keep it fixed). Call a subgroup L an intermediate lattice if Q is contained in L and L is contained in P; 'the index of L' always means [L : Q], and whenever [P : L] is used instead this must be said in the same sentence. 'A_3' means n = 4, i.e. G = SL_4(C) with alpha_1, alpha_2, alpha_3 and omega_1, omega_2, omega_3. Q1: In this notation, state and prove the precise relation between the quotients of G by subgroups of its centre (equivalently, the connected complex semisimple groups covered by G) and the intermediate lattices L with Q contained in L contained in P: give the map in both directions and prove it is a bijection.",
+      "rationale": "Defines every object, index convention, and the meaning of 'A_3' and 'lattice between' before any question uses them.",
+      "introduces_mathematical_claim": true,
+      "claims_to_verify": [
+        "Q is contained in P for type A_{n-1}, so that 'intermediate lattice' is non-vacuous",
+        "P/Q is finite for type A_{n-1}",
+        "the stated Cartan matrix convention a_{ij} = <alpha_j, alpha_i^vee> is the one the author intends",
+        "that the correspondence in Q1 is between subgroups of the centre of SL_n(C) and intermediate lattices in the direction the author intends"
+      ],
+      "axis_safety": "mathematical"
+    },
+    {
+      "id": "e2",
+      "axis": "target_claim",
+      "target_score": 2,
+      "kind": "replace",
+      "anchor": "Q3: In type A for each fixed index sitting between it is uniquely determined?",
+      "text": "Q3 (PRIMARY TARGET T; Q1, Q2, Q4, Q5 are supporting deliverables, but T is the single claim to be resolved). T: For every integer n >= 2 and every positive integer d dividing |P/Q| (with P, Q the lattices of type A_{n-1} as fixed above), the set { L : Q contained in L contained in P, [L : Q] = d } has exactly one element. Decide T: either prove T for all n >= 2 and all such d, or exhibit an explicit n and d and two distinct intermediate lattices L_1 != L_2 with [L_1 : Q] = [L_2 : Q] = d.",
+      "rationale": "Replaces the ambiguous 'uniquely determined?' with one formally quantified claim and demotes the other four questions to supporting items.",
+      "introduces_mathematical_claim": true,
+      "claims_to_verify": [
+        "|P/Q| is finite so that 'd divides |P/Q|' is meaningful",
+        "that indexing by [L:Q] rather than [P:L] matches the author's intended reading of 'index sitting between'"
+      ],
+      "axis_safety": "structural"
+    },
+    {
+      "id": "e3",
+      "axis": "no_answer_leak",
+      "target_score": 2,
+      "kind": "replace",
+      "anchor": "Q5: But why this is unique, for example, why alpha1 omega23 doesn\u2019t work",
+      "text": "Q5: Before answering, resolve the string 'alpha1 omega23' into an explicit subgroup of P in the fixed A_3 notation: state which element(s) of P you take it to denote (e.g. the subgroup Q + Z(omega_2 + omega_3), or Q + Z alpha_1 + Z omega_2 + Z omega_3, or another reading) and answer for every reading you consider plausible, flagging which reading you believe was intended. For each resolved candidate L', determine (i) whether Q is contained in L' and L' is contained in P, (ii) the value of [L' : Q], and (iii) whether L' coincides with or differs from every other intermediate lattice of that same index. It is NOT given that this candidate 'doesn't work' and it is NOT given that uniqueness holds: if some reading of the candidate yields a genuine second intermediate lattice of an index already realised, report that as a counterexample to T and revise the answer to Q3 accordingly. Do not phrase any part of the answer as an explanation of a conclusion assumed in advance.",
+      "rationale": "Removes the presupposition that uniqueness holds and that the named candidate fails, while forcing the undefined string to be given a stated meaning.",
+      "introduces_mathematical_claim": false,
+      "claims_to_verify": [
+        "that one of the listed readings of 'alpha1 omega23' is the author's intended one"
+      ],
+      "axis_safety": "structural"
+    },
+    {
+      "id": "e4",
+      "axis": "success_criteria",
+      "target_score": 2,
+      "kind": "add",
+      "anchor": "",
+      "text": "What counts as a complete answer. (a) Q1: the two maps (subgroup of centre of SL_n(C) <-> intermediate lattice) written down explicitly on elements, plus a proof of mutual inverseness, with the direction of inclusion-preservation stated. (b) Q2: an identity relating det A to the intermediate-lattice picture, proved for all n >= 2, not merely checked numerically. (c) Q3 = T, affirmative resolution: a proof valid for every n >= 2 and every divisor d of |P/Q|, together with, for each such d, an explicit generator set for the unique L of index d in terms of omega_1, ..., omega_{n-1}. (d) Q3 = T, negative resolution: explicit n, d, and two distinct lattices L_1, L_2 given by generators in the omega-basis, with verified containments Q in L_i in P, verified equal indices, and an explicit element of L_1 \\ L_2. (e) Q4: a table of ALL intermediate lattices for A_3 (n = 4), each row giving generators over Q, the index [L : Q], the index [P : L], and the corresponding quotient of SL_4(C), plus a proof that the table is exhaustive. (f) Q5: for each reading of the candidate, either the exact condition it violates (which containment or which index computation fails, with the offending element exhibited), or the statement that it is a legitimate intermediate lattice together with its row in the A_3 table.",
+      "rationale": "Spells out deliverables for both the affirmative and negative resolution of T and for each supporting question.",
+      "introduces_mathematical_claim": false,
+      "claims_to_verify": [
+        "that a closed-form identity relating det A to the intermediate-lattice picture is what the author means by Q2"
+      ],
+      "axis_safety": "mathematical"
+    },
+    {
+      "id": "e5",
+      "axis": "ruled_out_shortcuts",
+      "target_score": 2,
+      "kind": "add",
+      "anchor": "",
+      "text": "Not accepted as a solution. (1) Computing det A for A_1, A_2, A_3 and observing a numerical pattern, without a proof of the Q2 relation for all n. (2) Settling T only for prime d, only for prime n, or only for d = 1 and d = |P/Q| (i.e. only the cases L = Q and L = P). (3) Listing several intermediate lattices for A_3 without proving the list is exhaustive. (4) Asserting the structure of the finite abelian group P/Q for type A_{n-1} by citation only, with no derivation in the fixed notation. (5) Answering Q5 by quoting the index of the candidate lattice without exhibiting the specific containment or generation failure (or the specific coincidence with another lattice). (6) Answering Q1 by saying the correspondence with covering groups is 'standard' without writing both maps and proving bijectivity. (7) A resolution of T that only counts subgroups of P/Q abstractly without producing generators of each L in the omega-basis as required in (c)/(e).",
+      "rationale": "Enumerates the specific partial results for this problem that would not close T or the A_3 classification.",
+      "introduces_mathematical_claim": true,
+      "claims_to_verify": [
+        "that d = 1 and d = |P/Q| correspond to L = Q and L = P respectively under the [L:Q] convention"
+      ],
+      "axis_safety": "mathematical"
+    },
+    {
+      "id": "e6",
+      "axis": "pitfall_warnings",
+      "target_score": 2,
+      "kind": "add",
+      "anchor": "",
+      "text": "Named pitfalls to avoid, each of which must be addressed rather than assumed. (i) Index confusion: silently swapping [L : Q] and [P : L]; every index statement must name which one, and any use of [P : Q] = [P : L][L : Q] must be justified. (ii) Direction confusion in Q1: assuming the correspondence between quotients of SL_n(C) and intermediate lattices is inclusion-preserving rather than inclusion-reversing (or vice versa) without checking on the extreme cases L = Q and L = P. (iii) Assuming without proof that every intermediate lattice has the form Q + Z v for a single v in P. (iv) Assuming the number of intermediate lattices of index d equals 1 merely because the number of divisors of |P/Q| matches the number of lattices found, without determining the group structure of P/Q. (v) Conflating an element of P with its class in P/Q; expressions like 'alpha_1, omega_2, omega_3' must be turned into a subgroup of P before any claim is made about them. (vi) Convention drift: switching between A and its transpose, or renumbering alpha_1, alpha_2, alpha_3 mid-argument, which matters because Q5 names specific indices. (vii) Ignoring the degenerate case n = 2, where there is a single simple root alpha_1, and the case where d = |P/Q|.",
+      "rationale": "Names concrete, problem-specific failure modes (index swap, single-generator assumption, element vs coset, numbering conventions).",
+      "introduces_mathematical_claim": true,
+      "claims_to_verify": [
+        "multiplicativity [P:Q] = [P:L][L:Q] holds for the lattices considered",
+        "that the correspondence of Q1 is monotone in one of the two directions, so that checking on L = Q and L = P is meaningful"
+      ],
+      "axis_safety": "mathematical"
+    },
+    {
+      "id": "e7",
+      "axis": "resource_bounds",
+      "target_score": 2,
+      "kind": "add",
+      "anchor": "",
+      "text": "Permitted resources and conditions of use. You may use: the classification and standard structure theory of complex semisimple Lie algebras and groups (Bourbaki, Groupes et algebres de Lie IV-VI; Humphreys; Fulton-Harris) for the definitions of Q, P, A and the centre of SL_n(C); elementary finite abelian group theory (correspondence theorem for subgroups containing a fixed subgroup, structure theorem, subgroup counting); integer matrix theory (Smith normal form, determinant and elementary divisors of A). Conditions: any cited theorem linking covering groups to lattices must be quoted with its hypotheses (semisimple, simply connected, base field C) and checked against G = SL_n(C) before use; any statement about P/Q for type A_{n-1} taken from a source must be re-derived in the fixed omega-basis notation. Computer algebra (GAP, Sage, LiE) is permitted for the A_3 enumeration and for Smith normal forms, but every machine output used in the final answer must be reproduced by hand in the omega-basis, and the command plus its output must be shown.",
+      "rationale": "States which background areas and tools are allowed and under what verification conditions, tied to the specific objects Q, P, A and SL_n(C).",
+      "introduces_mathematical_claim": false,
+      "claims_to_verify": [
+        "that Smith normal form of the Cartan matrix is an admissible tool for the author's intended treatment of Q2"
+      ],
+      "axis_safety": "mathematical"
+    },
+    {
+      "id": "e8",
+      "axis": "reformulations",
+      "target_score": 2,
+      "kind": "add",
+      "anchor": "",
+      "text": "Scaffolding you may use, with its limits stated. (R1) Quotient reformulation: intermediate lattices L with Q in L in P should correspond to subgroups of the finite abelian group P/Q via L |-> L/Q; if you use this, prove the correspondence is a bijection preserving indices. Limit: this converts T into a statement about subgroups of P/Q of given order and therefore still requires the group structure of P/Q to be determined independently, and it produces no generators in the omega-basis, which items (c)/(e) demand. (R2) Matrix reformulation: express each alpha_i in the basis omega_1, ..., omega_{n-1} using the entries a_{ij}; then P/Q is the cokernel of the resulting integer matrix, so its elementary divisors are candidates for extraction by Smith normal form, and det A enters as the order-type invariant relevant to Q2. Limit: Smith normal form yields the abstract isomorphism type only; passing from it to the list of intermediate lattices for A_3 requires explicit coset representatives among omega_1, omega_2, omega_3. (R3) Group-side reformulation: work instead with subgroups of the centre of SL_4(C) for Q4 and translate back through Q1. Limit: this is only usable after Q1 has been proved, and must not be cited as independent confirmation of a Q1-based argument.",
+      "rationale": "Supplies three concrete intermediate framings in the prompt's own objects (P/Q, cokernel of the Cartan matrix, centre of SL_4) with explicit limitations.",
+      "introduces_mathematical_claim": true,
+      "claims_to_verify": [
+        "L |-> L/Q is a bijection between intermediate lattices and subgroups of P/Q",
+        "each alpha_i lies in P so can be written in the omega-basis with integer coefficients",
+        "P/Q is the cokernel of the integer matrix expressing the alpha_i in the omega-basis"
+      ],
+      "axis_safety": "mathematical"
+    },
+    {
+      "id": "e9",
+      "axis": "verification_demand",
+      "target_score": 2,
+      "kind": "add",
+      "anchor": "",
+      "text": "Adversarial audit before returning. Attack your own answer against this checklist and report the outcome of each item. (V1) Determine P/Q for A_3 by two independent routes (elementary divisors of the matrix expressing alpha_1, alpha_2, alpha_3 in the omega-basis; and explicit coset representatives built from omega_1, omega_2, omega_3) and confirm the two answers agree, including the orders of the classes of omega_1, omega_2, omega_3. (V2) For every row of the A_3 table, verify Q in L by writing each of alpha_1, alpha_2, alpha_3 as an integer combination of the listed generators, and verify L in P by writing each generator as an integer combination of omega_1, omega_2, omega_3. (V3) Check [P : Q] = [P : L][L : Q] numerically for every row. (V4) Try actively to break T: for n = 4 and for at least one n with |P/Q| composite and not a prime power, search for a second intermediate lattice of an index already realised; report the search you performed and whether it terminated in failure or in a counterexample. (V5) Re-run Q5 for every reading of 'alpha1 omega23' and confirm that the failure (or non-failure) diagnosed is the same under (V2). (V6) Check n = 2 and the extremes d = 1, d = |P/Q| against the general statement of T.",
+      "rationale": "Replaces absent verification with a concrete audit tied to the A_3 table, index multiplicativity, and an active attempt to falsify T.",
+      "introduces_mathematical_claim": true,
+      "claims_to_verify": [
+        "that there exists n with |P/Q| composite and not a prime power for type A_{n-1}, as V4 presumes"
+      ],
+      "axis_safety": "structural"
+    },
+    {
+      "id": "e10",
+      "axis": "search_policy",
+      "target_score": 2,
+      "kind": "add",
+      "anchor": "",
+      "text": "Search policy. Pursue at least three lines in parallel and keep them logically independent: (L-a) subgroup analysis inside the finite abelian group P/Q; (L-b) integer-matrix computation with the Cartan matrix A in the omega-basis; (L-c) the SL_4(C)-centre side for Q4. Record which of Q1-Q5 each line has settled. Do not present (L-c) as confirmation of (L-a) if the argument passes through the Q1 correspondence in both cases, i.e. if they are the same argument in disguise. Abandon a line if, after a bounded effort, it has neither produced generators in the omega-basis for all intermediate lattices of A_3 nor produced a candidate counterexample to T; reallocate to the remaining lines. Reopen an abandoned line if (L-a) and (L-b) disagree about the structure of P/Q or about the count of lattices of a given index, and do not report a resolution of T while such a disagreement stands.",
+      "rationale": "Gives explicit portfolio management naming the three concrete lines available for this problem, with independence, abandonment and reopening rules.",
+      "introduces_mathematical_claim": false,
+      "claims_to_verify": [],
+      "axis_safety": "structural"
+    },
+    {
+      "id": "e11",
+      "axis": "stop_condition",
+      "target_score": 2,
+      "kind": "add",
+      "anchor": "",
+      "text": "When to return, and what not to return. Return only when: T (Q3) is resolved in one direction with a proof valid for all n >= 2 and all divisors d, or with an explicit counterexample as in (d); the A_3 table of Q4 is complete with an exhaustiveness proof; Q1 and Q2 are proved as stated; Q5 is answered for every reading of 'alpha1 omega23'; and every item V1-V6 has been executed and reported. Refuse to return: a claim about the structure of P/Q for type A_{n-1} that is only asserted or only cited; an A_3 list without an exhaustiveness proof; 'this is standard / well known' in place of a proof of the Q1 correspondence; verification restricted to n <= 4; an answer to Q5 of the form 'it doesn't work' without the offending element or the offending index computation; a resolution of T holding only for prime d or prime n. If T cannot be resolved, return the partial state instead: state precisely which n and which divisors d are settled, which are open, and which of L-a, L-b, L-c stalled and where.",
+      "rationale": "Fixes an explicit return condition and lists the specific non-answers (uncited P/Q structure, non-exhaustive A_3 list, 'standard') that must be refused.",
+      "introduces_mathematical_claim": false,
+      "claims_to_verify": [],
+      "axis_safety": "structural"
+    },
+    {
+      "id": "e12",
+      "axis": "contamination_control",
+      "target_score": 2,
+      "kind": "add",
+      "anchor": "",
+      "text": "Lookup boundary. Allowed to look up: the definition and standard numbering of the A_{n-1} Cartan matrix, the definitions of Q, P, omega_j, the statement of the correspondence theorem for subgroups of an abelian group containing a fixed subgroup, and the Smith normal form algorithm. Not allowed as the answer: retrieving a ready-made classification of the lattices between Q and P in type A, a published list or table of the quotients of SL_4(C) by central subgroups, or a stated theorem asserting the uniqueness in T, and presenting any of these as the resolution. If such a source is encountered, do not quote it as the answer: re-derive the statement in the fixed omega-basis notation, present the derivation, and cite the source only in the audit section as a consistency check on V1-V4, noting explicitly where it agreed or disagreed with your own derivation.",
+      "rationale": "Draws a specific boundary between looking up A_{n-1} conventions and retrieving the intermediate-lattice classification or the SL_4 quotient table that constitutes the answer.",
+      "introduces_mathematical_claim": false,
+      "claims_to_verify": [],
+      "axis_safety": "structural"
+    }
+  ],
+  "cannot_fix": [],
+  "applied": [
+    "e1",
+    "e2",
+    "e3",
+    "e4",
+    "e5",
+    "e6",
+    "e7",
+    "e8",
+    "e9",
+    "e10",
+    "e11",
+    "e12"
+  ],
+  "notes": "All twelve edits integrated. The three replacements were made in place at their named spans (Q1, Q3, Q5), leaving Q2 and Q4 verbatim. The nine additions were placed as separate blocks after the question list, grouped by relatedness: answer-quality blocks (e4 success criteria, e5 ruled-out shortcuts, e6 pitfalls) first, then resource/lookup blocks (e7 permitted resources, e12 lookup boundary placed adjacent since both govern sources), then method blocks (e8 reformulations, e10 search policy), then closing blocks (e9 audit, e11 stop condition, ordered so the audit items V1-V6 precede the stop condition that references them). The prompt had no headings or list formatting to match, so each added block is rendered as a plain paragraph in the same ASCII notation as the setup.",
+  "fidelity": {
+    "preserved": false,
+    "issues": [
+      {
+        "severity": "low",
+        "detail": "Q1 is reworded rather than merely supplemented. Original: 'relation between covering group of SL over C and lattice between root lattice and weight lattice'. Revision recasts the object as 'quotients of G by subgroups of its centre (equivalently, the connected complex semisimple groups covered by G)' and demands maps in both directions plus a bijectivity proof. The equivalence asserted parenthetically ('quotients by central subgroups = groups covered by G') is a new mathematical claim, not present in the original."
+      },
+      {
+        "severity": "medium",
+        "detail": "Q5's presuppositions are removed/negated rather than added to. The original asserts uniqueness ('why this is unique') and that the candidate fails ('why alpha1 omega23 doesn't work'); the revision explicitly states 'It is NOT given that this candidate \"doesn't work\" and it is NOT given that uniqueness holds', and forbids phrasing the answer as explaining a pre-assumed conclusion. This inverts the epistemic status of the original claims."
+      },
+      {
+        "severity": "low",
+        "detail": "Q3 is converted from an informal question ('In type A for each fixed index sitting between it is uniquely determined?') into a fully quantified decidable proposition T ('for every integer n >= 2 and every positive integer d dividing |P/Q| ... exactly one element'), with an explicit counterexample option. The mathematical content is a formalization, but the quantifiers over n and d, and the identification of 'index' with [L:Q], are new specifications not in the original."
+      },
+      {
+        "severity": "low",
+        "detail": "The revision fixes conventions that the original left open (Cartan matrix convention a_{ij} = <alpha_j, alpha_i^vee>; 'index' = [L:Q]; A_3 = n = 4; numbering of simple roots along the diagram). These are constraints added to a previously unconstrained problem."
+      }
+    ],
+    "new_mathematical_assertions": [
+      "G = SL_n(C) is a simply connected complex semisimple group whose Lie algebra sl_n(C) has root system of type A_{n-1}.",
+      "Fundamental weights are characterized by <omega_j, alpha_i^vee> = delta_{ij}, and Q = Z alpha_1 + ... + Z alpha_{n-1}, P = Z omega_1 + ... + Z omega_{n-1}.",
+      "Cartan matrix convention a_{ij} = <alpha_j, alpha_i^vee> (with transpose as an alternative admissible convention).",
+      "Quotients of G by subgroups of its centre are equivalently the connected complex semisimple groups covered by G.",
+      "There is a bijection, in both directions explicitly given, between subgroups of the centre of SL_n(C) and intermediate lattices Q \u2286 L \u2286 P, and this bijection is inclusion-preserving in one specified direction (inclusion-reversing vs preserving to be checked on L = Q and L = P).",
+      "There is an identity relating det A to the intermediate-lattice picture, valid for all n >= 2.",
+      "P/Q is a finite abelian group.",
+      "Intermediate lattices Q \u2286 L \u2286 P correspond bijectively to subgroups of P/Q via L |-> L/Q, index-preservingly.",
+      "P/Q is the cokernel of the integer matrix expressing alpha_1,...,alpha_{n-1} in the omega-basis, so its elementary divisors are obtainable by Smith normal form, and det A is the relevant order-type invariant for Q2.",
+      "The multiplicativity relation [P : Q] = [P : L][L : Q] holds for every intermediate lattice L (and requires justification).",
+      "For A_3 (n = 4) there is a finite, exhaustive table of intermediate lattices, each with generators over Q, index [L:Q], index [P:L], and corresponding quotient of SL_4(C).",
+      "The classes of omega_1, omega_2, omega_3 in P/Q have determinate orders, computable by two independent routes for A_3.",
+      "It is not automatic that every intermediate lattice has the form Q + Z v for a single v in P.",
+      "For n = 2 there is a single simple root alpha_1 (degenerate case), and the extreme cases d = 1 and d = |P/Q| correspond to L = Q and L = P.",
+      "The string 'alpha1 omega23' admits several distinct readings as subgroups of P, e.g. Q + Z(omega_2 + omega_3) or Q + Z alpha_1 + Z omega_2 + Z omega_3.",
+      "There exists at least one n for which |P/Q| is composite and not a prime power (used as a target for counterexample search)."
+    ]
+  },
+  "revised": "Setup and notation (fixed for all of Q1-Q5). Let n >= 2 be an integer, let G = SL_n(C) (complex points, simply connected semisimple), with Lie algebra sl_n(C) of root system type A_{n-1}. Fix once and for all: simple roots alpha_1, ..., alpha_{n-1} numbered along the A_{n-1} Dynkin diagram so that alpha_i and alpha_{i+1} are adjacent; coroots alpha_i^vee; fundamental weights omega_1, ..., omega_{n-1} defined by <omega_j, alpha_i^vee> = delta_{ij}; root lattice Q = Z alpha_1 + ... + Z alpha_{n-1}; weight lattice P = Z omega_1 + ... + Z omega_{n-1}; Cartan matrix A = (a_{ij}) with the convention a_{ij} = <alpha_j, alpha_i^vee> (if you use the transpose convention, say so explicitly and keep it fixed). Call a subgroup L an intermediate lattice if Q is contained in L and L is contained in P; 'the index of L' always means [L : Q], and whenever [P : L] is used instead this must be said in the same sentence. 'A_3' means n = 4, i.e. G = SL_4(C) with alpha_1, alpha_2, alpha_3 and omega_1, omega_2, omega_3. Q1: In this notation, state and prove the precise relation between the quotients of G by subgroups of its centre (equivalently, the connected complex semisimple groups covered by G) and the intermediate lattices L with Q contained in L contained in P: give the map in both directions and prove it is a bijection. Q2: What is the relation with determinant of cartan matrix Q3 (PRIMARY TARGET T; Q1, Q2, Q4, Q5 are supporting deliverables, but T is the single claim to be resolved). T: For every integer n >= 2 and every positive integer d dividing |P/Q| (with P, Q the lattices of type A_{n-1} as fixed above), the set { L : Q contained in L contained in P, [L : Q] = d } has exactly one element. Decide T: either prove T for all n >= 2 and all such d, or exhibit an explicit n and d and two distinct intermediate lattices L_1 != L_2 with [L_1 : Q] = [L_2 : Q] = d. Q4: How about A3, can you show me Q5: Before answering, resolve the string 'alpha1 omega23' into an explicit subgroup of P in the fixed A_3 notation: state which element(s) of P you take it to denote (e.g. the subgroup Q + Z(omega_2 + omega_3), or Q + Z alpha_1 + Z omega_2 + Z omega_3, or another reading) and answer for every reading you consider plausible, flagging which reading you believe was intended. For each resolved candidate L', determine (i) whether Q is contained in L' and L' is contained in P, (ii) the value of [L' : Q], and (iii) whether L' coincides with or differs from every other intermediate lattice of that same index. It is NOT given that this candidate 'doesn't work' and it is NOT given that uniqueness holds: if some reading of the candidate yields a genuine second intermediate lattice of an index already realised, report that as a counterexample to T and revise the answer to Q3 accordingly. Do not phrase any part of the answer as an explanation of a conclusion assumed in advance.\n\nWhat counts as a complete answer. (a) Q1: the two maps (subgroup of centre of SL_n(C) <-> intermediate lattice) written down explicitly on elements, plus a proof of mutual inverseness, with the direction of inclusion-preservation stated. (b) Q2: an identity relating det A to the intermediate-lattice picture, proved for all n >= 2, not merely checked numerically. (c) Q3 = T, affirmative resolution: a proof valid for every n >= 2 and every divisor d of |P/Q|, together with, for each such d, an explicit generator set for the unique L of index d in terms of omega_1, ..., omega_{n-1}. (d) Q3 = T, negative resolution: explicit n, d, and two distinct lattices L_1, L_2 given by generators in the omega-basis, with verified containments Q in L_i in P, verified equal indices, and an explicit element of L_1 \\ L_2. (e) Q4: a table of ALL intermediate lattices for A_3 (n = 4), each row giving generators over Q, the index [L : Q], the index [P : L], and the corresponding quotient of SL_4(C), plus a proof that the table is exhaustive. (f) Q5: for each reading of the candidate, either the exact condition it violates (which containment or which index computation fails, with the offending element exhibited), or the statement that it is a legitimate intermediate lattice together with its row in the A_3 table.\n\nNot accepted as a solution. (1) Computing det A for A_1, A_2, A_3 and observing a numerical pattern, without a proof of the Q2 relation for all n. (2) Settling T only for prime d, only for prime n, or only for d = 1 and d = |P/Q| (i.e. only the cases L = Q and L = P). (3) Listing several intermediate lattices for A_3 without proving the list is exhaustive. (4) Asserting the structure of the finite abelian group P/Q for type A_{n-1} by citation only, with no derivation in the fixed notation. (5) Answering Q5 by quoting the index of the candidate lattice without exhibiting the specific containment or generation failure (or the specific coincidence with another lattice). (6) Answering Q1 by saying the correspondence with covering groups is 'standard' without writing both maps and proving bijectivity. (7) A resolution of T that only counts subgroups of P/Q abstractly without producing generators of each L in the omega-basis as required in (c)/(e).\n\nNamed pitfalls to avoid, each of which must be addressed rather than assumed. (i) Index confusion: silently swapping [L : Q] and [P : L]; every index statement must name which one, and any use of [P : Q] = [P : L][L : Q] must be justified. (ii) Direction confusion in Q1: assuming the correspondence between quotients of SL_n(C) and intermediate lattices is inclusion-preserving rather than inclusion-reversing (or vice versa) without checking on the extreme cases L = Q and L = P. (iii) Assuming without proof that every intermediate lattice has the form Q + Z v for a single v in P. (iv) Assuming the number of intermediate lattices of index d equals 1 merely because the number of divisors of |P/Q| matches the number of lattices found, without determining the group structure of P/Q. (v) Conflating an element of P with its class in P/Q; expressions like 'alpha_1, omega_2, omega_3' must be turned into a subgroup of P before any claim is made about them. (vi) Convention drift: switching between A and its transpose, or renumbering alpha_1, alpha_2, alpha_3 mid-argument, which matters because Q5 names specific indices. (vii) Ignoring the degenerate case n = 2, where there is a single simple root alpha_1, and the case where d = |P/Q|.\n\nPermitted resources and conditions of use. You may use: the classification and standard structure theory of complex semisimple Lie algebras and groups (Bourbaki, Groupes et algebres de Lie IV-VI; Humphreys; Fulton-Harris) for the definitions of Q, P, A and the centre of SL_n(C); elementary finite abelian group theory (correspondence theorem for subgroups containing a fixed subgroup, structure theorem, subgroup counting); integer matrix theory (Smith normal form, determinant and elementary divisors of A). Conditions: any cited theorem linking covering groups to lattices must be quoted with its hypotheses (semisimple, simply connected, base field C) and checked against G = SL_n(C) before use; any statement about P/Q for type A_{n-1} taken from a source must be re-derived in the fixed omega-basis notation. Computer algebra (GAP, Sage, LiE) is permitted for the A_3 enumeration and for Smith normal forms, but every machine output used in the final answer must be reproduced by hand in the omega-basis, and the command plus its output must be shown.\n\nLookup boundary. Allowed to look up: the definition and standard numbering of the A_{n-1} Cartan matrix, the definitions of Q, P, omega_j, the statement of the correspondence theorem for subgroups of an abelian group containing a fixed subgroup, and the Smith normal form algorithm. Not allowed as the answer: retrieving a ready-made classification of the lattices between Q and P in type A, a published list or table of the quotients of SL_4(C) by central subgroups, or a stated theorem asserting the uniqueness in T, and presenting any of these as the resolution. If such a source is encountered, do not quote it as the answer: re-derive the statement in the fixed omega-basis notation, present the derivation, and cite the source only in the audit section as a consistency check on V1-V4, noting explicitly where it agreed or disagreed with your own derivation.\n\nScaffolding you may use, with its limits stated. (R1) Quotient reformulation: intermediate lattices L with Q in L in P should correspond to subgroups of the finite abelian group P/Q via L |-> L/Q; if you use this, prove the correspondence is a bijection preserving indices. Limit: this converts T into a statement about subgroups of P/Q of given order and therefore still requires the group structure of P/Q to be determined independently, and it produces no generators in the omega-basis, which items (c)/(e) demand. (R2) Matrix reformulation: express each alpha_i in the basis omega_1, ..., omega_{n-1} using the entries a_{ij}; then P/Q is the cokernel of the resulting integer matrix, so its elementary divisors are candidates for extraction by Smith normal form, and det A enters as the order-type invariant relevant to Q2. Limit: Smith normal form yields the abstract isomorphism type only; passing from it to the list of intermediate lattices for A_3 requires explicit coset representatives among omega_1, omega_2, omega_3. (R3) Group-side reformulation: work instead with subgroups of the centre of SL_4(C) for Q4 and translate back through Q1. Limit: this is only usable after Q1 has been proved, and must not be cited as independent confirmation of a Q1-based argument.\n\nSearch policy. Pursue at least three lines in parallel and keep them logically independent: (L-a) subgroup analysis inside the finite abelian group P/Q; (L-b) integer-matrix computation with the Cartan matrix A in the omega-basis; (L-c) the SL_4(C)-centre side for Q4. Record which of Q1-Q5 each line has settled. Do not present (L-c) as confirmation of (L-a) if the argument passes through the Q1 correspondence in both cases, i.e. if they are the same argument in disguise. Abandon a line if, after a bounded effort, it has neither produced generators in the omega-basis for all intermediate lattices of A_3 nor produced a candidate counterexample to T; reallocate to the remaining lines. Reopen an abandoned line if (L-a) and (L-b) disagree about the structure of P/Q or about the count of lattices of a given index, and do not report a resolution of T while such a disagreement stands.\n\nAdversarial audit before returning. Attack your own answer against this checklist and report the outcome of each item. (V1) Determine P/Q for A_3 by two independent routes (elementary divisors of the matrix expressing alpha_1, alpha_2, alpha_3 in the omega-basis; and explicit coset representatives built from omega_1, omega_2, omega_3) and confirm the two answers agree, including the orders of the classes of omega_1, omega_2, omega_3. (V2) For every row of the A_3 table, verify Q in L by writing each of alpha_1, alpha_2, alpha_3 as an integer combination of the listed generators, and verify L in P by writing each generator as an integer combination of omega_1, omega_2, omega_3. (V3) Check [P : Q] = [P : L][L : Q] numerically for every row. (V4) Try actively to break T: for n = 4 and for at least one n with |P/Q| composite and not a prime power, search for a second intermediate lattice of an index already realised; report the search you performed and whether it terminated in failure or in a counterexample. (V5) Re-run Q5 for every reading of 'alpha1 omega23' and confirm that the failure (or non-failure) diagnosed is the same under (V2). (V6) Check n = 2 and the extremes d = 1, d = |P/Q| against the general statement of T.\n\nWhen to return, and what not to return. Return only when: T (Q3) is resolved in one direction with a proof valid for all n >= 2 and all divisors d, or with an explicit counterexample as in (d); the A_3 table of Q4 is complete with an exhaustiveness proof; Q1 and Q2 are proved as stated; Q5 is answered for every reading of 'alpha1 omega23'; and every item V1-V6 has been executed and reported. Refuse to return: a claim about the structure of P/Q for type A_{n-1} that is only asserted or only cited; an A_3 list without an exhaustiveness proof; 'this is standard / well known' in place of a proof of the Q1 correspondence; verification restricted to n <= 4; an answer to Q5 of the form 'it doesn't work' without the offending element or the offending index computation; a resolution of T holding only for prime d or prime n. If T cannot be resolved, return the partial state instead: state precisely which n and which divisors d are settled, which are open, and which of L-a, L-b, L-c stalled and where."
+}

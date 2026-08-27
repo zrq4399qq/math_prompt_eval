@@ -1,0 +1,1 @@
+Q1: What is the relation between covering group of SL over C and lattice between root lattice and weight lattice Q2: What is the relation with determinant of cartan matrix Q3: In type A for each fixed index sitting between it is uniquely determined? Q4: How about A3, can you show me Q5: But why this is unique, for example, why alpha1 omega23 doesn’t work

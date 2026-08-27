@@ -1,0 +1,10 @@
+# secrets — never commit
+key.env
+*.env
+
+# python
+__pycache__/
+*.py[cod]
+
+# jupyter
+.ipynb_checkpoints/
